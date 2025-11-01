@@ -80,6 +80,34 @@ public class StudentDao implements StudentDaoInterface{
 		}
 		return false;
 	}
+
+	@Override
+	public StudentModel getStudentDetails(String username) {
+		
+		
+		StudentModel sm = new StudentModel();
+		try {
+			con = DBConnection.getConnection();
+			String query = "SELECT firstname, lastname, username, password, emailId, phoneNo FROM Students WHERE username = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setString(1, username);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				sm.setFname(rs.getString(1));
+				sm.setLname(rs.getString(2));
+				sm.setUsername(rs.getString(3));
+				sm.setPassword(rs.getString(4));
+				sm.setEmail(rs.getString(5));
+				sm.setPhone(rs.getString(6));
+			}
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return sm;
+	}
 	
 	
 

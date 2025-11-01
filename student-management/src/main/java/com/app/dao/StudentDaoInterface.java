@@ -8,6 +8,7 @@ public interface StudentDaoInterface {
 	
 	public boolean submitUserDetails(StudentModel s);
 	public List<StudentModel> getStudentDetails();
+	public StudentModel getStudentDetails(String username);
 	public boolean updateStudentDetails(String username);
 
 }

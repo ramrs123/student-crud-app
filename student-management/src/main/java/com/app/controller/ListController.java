@@ -13,6 +13,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+/*
+ * A WebServlet that fetches List of Students and routes to students-list.jsp
+ * @author Ramakrishna  
+ */
 
 @WebServlet("/studentlist")
 public class ListController extends HttpServlet {

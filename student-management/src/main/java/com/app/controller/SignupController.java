@@ -12,6 +12,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+/*
+ * A WebServlet that posts the Student details to the database and 
+ * routes to  success.jsp if posted successfully else return to 
+ * register.jsp
+ * @author Ramakrishna 
+ */
+
 @WebServlet("/signup")
 public class SignupController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -39,7 +46,7 @@ public class SignupController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("success.jsp");
 			rd.forward(request, response);
 		} else {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("register.jsp");
 		}
 
 	}
