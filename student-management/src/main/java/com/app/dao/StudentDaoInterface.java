@@ -10,5 +10,6 @@ public interface StudentDaoInterface {
 	public List<StudentModel> getStudentDetails();
 	public StudentModel getStudentDetails(String username);
 	public boolean updateStudentDetails(String username);
+	public boolean deleteStudent(String username);
 
 }
